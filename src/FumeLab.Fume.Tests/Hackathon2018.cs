@@ -25,7 +25,7 @@ namespace FumeLab.Fume.Tests
             var pageFactory = new PageFactory(commandRouter);
             var gitHubPageQueryHandler = new GetPageQueryHandler<GitHubPage>(driver, pageFactory);
 
-            var githubPage = gitHubPageQueryHandler.Handle(new GetPage { Url = url }).Value;
+            var githubPage = gitHubPageQueryHandler.Execute(new GetPage { Url = url }).Value;
 
             //SeleniumDriver.WebDriver.Manage().Window.Maximize();
 
@@ -33,21 +33,21 @@ namespace FumeLab.Fume.Tests
 
             //search for FumeLab on GitHub
             githubPage.SearchGitHub.WaitUntilVisible(timeout);
-            //githubPage.SearchGitHub.AppendValue("FumeLab");
-            //githubPage.JumpToFume.WaitFor(timeout).Until(Until.Clickable);
-            //githubPage.JumpToFume.Click();
+            githubPage.SearchGitHub.SetValue("FumeLab");
+            githubPage.JumpToFume.WaitUntilClickable(timeout);
+            githubPage.JumpToFume.Click();
 
             ////select FumeLab
-            //githubPage.FumeLabLink.WaitFor(timeout).Until(Until.Exists);
-            //githubPage.FumeLabLink.Click();
+            githubPage.FumeLabLink.WaitUntilExists(timeout);
+            githubPage.FumeLabLink.Click();
 
             ////select FumeLabBase
-            //githubPage.FumeLabBaseLink.WaitFor(timeout).Until(Until.Clickable);
-            //githubPage.FumeLabBaseLink.Click();
+            githubPage.FumeLabBaseLink.WaitUntilClickable(timeout);
+            githubPage.FumeLabBaseLink.Click();
 
             ////go to Fume Website
-            //githubPage.FumeSiteLink.WaitFor(timeout).Until(Until.Visible);
-            //githubPage.FumeSiteLink.Click();
+            githubPage.FumeSiteLink.WaitUntilVisible(timeout);
+            githubPage.FumeSiteLink.Click();
 
             //Assert.Equals("Fume Lab", SeleniumDriver.WebDriver.Title);
 

@@ -15,7 +15,7 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
        public override void HandleCommand(SetValue command)
         {
             var element =
-                Query.Handle(new FindElement { Selector = command.Selector }).Value;
+                Query.Execute(new FindElement { Selector = command.Selector }).Value;
             element.Clear();
             element.SendKeys(command.Value);
         }

@@ -13,7 +13,7 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 
         public override void HandleCommand(ClearValue command)
         {
-            Query.Handle(new FindElement { Selector = command.Selector }).Value.Clear();
+            Query.Execute(new FindElement { Selector = command.Selector }).Value.Clear();
         }
     }
 }

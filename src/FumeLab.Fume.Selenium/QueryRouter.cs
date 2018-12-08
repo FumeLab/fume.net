@@ -18,13 +18,13 @@ namespace FumeLab.Fume.Selenium
             _driver = driver;
 
             //_queryFactory.Register<GetPage>(() => new GetPageQueryHandler(_driver, new PageFactory(new CommandRouter(new CommandHandlerFactory(), driver))));
-            //_queryFactory.Register<FindElement>(() => new FindElementQueryHandler(_driver));
+            _queryFactory.Register<FindElement>(() => new FindElementQueryHandler(_driver));
 
         }
 
-        public IQueryResult Handle(IQuery query)
+        public IQueryResult Execute(IQuery query)
         {
-            return _queryFactory.Create(query.GetType()).Handle(query);
+            return _queryFactory.Create(query.GetType()).Execute(query);
         }
     }
 }

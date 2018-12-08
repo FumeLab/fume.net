@@ -14,10 +14,10 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
             _driver = driver;
             _pageFactory = pageFactory;
         }
-        public QueryResult<TPage> Handle(GetPage query)
+        public QueryResult<TPage> Execute(GetPage query)
         {
             _driver.Navigate().GoToUrl(query.Url);
-
+            _driver.Manage().Window.Maximize();
             return new QueryResult<TPage> {Value = _pageFactory.CreatePage<TPage>()};
         }
 

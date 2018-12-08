@@ -13,7 +13,7 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 
         public override void HandleCommand(AppendValue command)
         {
-            Query.Handle(new FindElement { Selector = command.Selector }).Value.SendKeys(command.Value);
+            Query.Execute(new FindElement { Selector = command.Selector }).Value.SendKeys(command.Value);
         }
 
     }

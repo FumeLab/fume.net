@@ -14,7 +14,7 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 
         public override void HandleCommand(Click command)
         {
-            Query.Handle(new FindElement {Selector = command.Selector}).Value.Click();
+            Query.Execute(new FindElement {Selector = command.Selector}).Value.Click();
         }
     }
 }

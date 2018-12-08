@@ -12,7 +12,8 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
         {
             _driver = driver;
         }
-        public QueryResult<IWebElement> Handle(FindElement query)
+
+        public QueryResult<IWebElement> Execute(FindElement query)
         {
             return new QueryResult<IWebElement> { Value = _driver.FindElement(new SelectorMapper().Map(query.Selector))};
         }

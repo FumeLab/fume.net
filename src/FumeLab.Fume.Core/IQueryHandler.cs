@@ -6,6 +6,6 @@ namespace FumeLab.Fume.Core
         where TResponse : IQueryResult
         where TQuery : IQuery
     {
-        TResponse Handle(TQuery query);
+        TResponse Execute(TQuery query);
     }
 }
