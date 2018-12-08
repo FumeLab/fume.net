@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>FumeLab.Fume.Core</id>    
+    <title>FumeLab.Fume.Core</title>
+    <version>1.0</version>
+    <description>FumeLab.Fume.Core</description>
+    <authors>FumeLab</authors>
+    <language>en-US</language>
+  </metadata>
+  
+  <files>
+    <file src="\Bin\Release\netstandard2.0\FumeLab.Fume.Core.dll" target="*" exclude=""/>    
+    <file src="\Bin\Release\netstandard2.0\FumeLab.Fume.Core.deps" target="*" exclude=""/>
+  </files>
+
+</package>
