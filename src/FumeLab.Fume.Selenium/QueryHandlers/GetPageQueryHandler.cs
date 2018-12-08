@@ -17,7 +17,7 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
         public TPage Handle(IQuery<GetPage> query)
         {
             _driver.Navigate().GoToUrl(query.Value.Url);
-
+            _driver.Manage().Window.Maximize();
             return _pageFactory.CreatePage<TPage>();
         }
 
