@@ -1,7 +1,5 @@
 # fume.net
 
-## What is fume.net?
-
 The fume.net is framework for writing automated UI tests using C# and .Net.
 Framework is the result of synergized work of software and test developers in one mission:
 Give community solution for open-source, modern, flexible and awesome testing framework.
@@ -59,3 +57,9 @@ Conditions for the elements can be selected between Exists, NotExists, Visible, 
 //Wait until element is clikable 
 homePage.ClickMeButton.WaitFor(TimeSpan.FromSeconds(5)).Until(Until.Clickable);
 ```
+
+##License
+fume.net is licensed under the MIT license.
+
+##FumeLab
+FumeLab is open source community with an aim to deliver modern and extensible test automation frameworks.
