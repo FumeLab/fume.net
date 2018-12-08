@@ -1,0 +1,13 @@
+language: csharp
+solution: FumeLab.Fume.sln
+install:
+  - nuget restore FumeLab.Fume.sln
+  - nuget install NUnit.Runners -OutputDirectory testrunner
+script:
+  - xbuild FumeLab.Fume.sln /p:TargetFrameworkVersion="netstandard2.0" /p:Configuration=Release
+ deploy:
+  skip_cleanup: true
+  provider: script
+  script: chmod +x ./deploy/deploy.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  on:
+    branch: master
