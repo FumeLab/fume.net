@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace FumeLab.Fume.Selenium
 {
-    public class CommandRouter : ICommandRouter
+    public class CommandRouter : ICommandHandler<ICommand>
     {
         private readonly ICommandHandlerFactory _commandFactory;
         private readonly IWebDriver _driver;
@@ -22,9 +22,9 @@ namespace FumeLab.Fume.Selenium
             _commandFactory.Register<ClearValue>(() => new ClearValueCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<SelectByText>(() => new SelectOptionByTextCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<SelectByValue>(() => new SelectOptionByValueCommandHandler(new FindElementQueryHandler(_driver)));
-
+            _commandFactory.Register<WaitUntilVisible>(() => new WaitUntilVisibleCommandHandler(_driver));
         }
-        public void Route(ICommand command)
+        public void Handle(ICommand command)
         {
             _commandFactory.Create(command.GetType()).Handle(command);
         }

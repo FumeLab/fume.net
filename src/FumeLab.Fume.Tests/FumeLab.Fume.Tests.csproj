@@ -50,6 +50,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hackathon2018.cs" />
+    <Compile Include="Pages\FumeLabPage.cs" />
+    <Compile Include="Pages\GitHubPage.cs" />
     <Compile Include="TestExample.cs" />
     <Compile Include="Pages\PageExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

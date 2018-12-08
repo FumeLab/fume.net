@@ -19,7 +19,7 @@ namespace FumeLab.Fume.Tests
             var queryHandler = new GetPageQueryHandler<PageExample>(driver, new PageFactory(commandRouter));
 
             var page = queryHandler.Handle(new Query<GetPage>(new GetPage {Url = url}));
-            page.inputElement.SetValue("zdravozivo");
+            //page.inputElement.SetValue("zdravozivo");
             page.ClickMeButton.Click();
         }
 

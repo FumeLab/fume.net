@@ -13,11 +13,16 @@ namespace FumeLab.Fume.Core
         {
             SupportedTypesCatalogue.Add(typeof(Id), (value) => new Id {Value = value});
             SupportedTypesCatalogue.Add(typeof(Name), (value) => new Name {Value = value});
+            SupportedTypesCatalogue.Add(typeof(TagName), (value) => new TagName {Value = value});
+            SupportedTypesCatalogue.Add(typeof(ClassName), (value) => new ClassName {Value = value});
+            SupportedTypesCatalogue.Add(typeof(Css), (value) => new Css {Value = value});
+            SupportedTypesCatalogue.Add(typeof(LinkText), (value) => new LinkText {Value = value});
+            SupportedTypesCatalogue.Add(typeof(XPath), (value) => new XPath {Value = value});
         }
 
-        public Selector Create(Type elemenType, string value)
+        public Selector Create(Type elementType, string value)
         {
-            return SupportedTypesCatalogue[elemenType].Invoke(value);
+            return SupportedTypesCatalogue[elementType].Invoke(value);
         }
     }
 }

@@ -5,13 +5,13 @@ namespace FumeLab.Fume.Core.Elements
 {
     public class Clickable : Element
     {
-        private readonly ICommandRouter _commandRouter;
+        private readonly ICommandHandler<ICommand> _commandRouter;
 
-        public Clickable(Selector selector, ICommandRouter commandRouter) : base(selector)
+        public Clickable(Selector selector, ICommandHandler<ICommand> commandRouter) : base(selector)
         {
             _commandRouter = commandRouter;
         }
 
-        public void Click() => _commandRouter.Route(new Click {Selector = this.Selector});
+        public void Click() => _commandRouter.Handle(new Click {Selector = this.Selector});
     }
 }
