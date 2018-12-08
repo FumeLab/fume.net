@@ -14,7 +14,8 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
         }
         public IWebElement Handle(IQuery<FindElement> query)
         {
-            return _driver.FindElement(By.Id(query.Value.Selector.Value));
+            var selectorMapper = new SelectorMapper();
+            return _driver.FindElement(selectorMapper.Map(query.Value.Selector));
         }
     }
 }

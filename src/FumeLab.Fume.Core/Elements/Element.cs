@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FumeLab.Fume.Core.Selectors;
+﻿using FumeLab.Fume.Core.Selectors;
 
 namespace FumeLab.Fume.Core.Elements
 {

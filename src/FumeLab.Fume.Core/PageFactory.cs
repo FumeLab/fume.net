@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
+using FumeLab.Fume.Core.Commands;
 
 namespace FumeLab.Fume.Core
 {
     public class PageFactory : IPageFactory
     {
-        private readonly ICommandRouter _commandRouter;
+        private readonly ICommandHandler<ICommand> _commandRouter;
 
-        public PageFactory(ICommandRouter commandRouter)
+        public PageFactory(ICommandHandler<ICommand> commandRouter)
         {
             _commandRouter = commandRouter;
         }
