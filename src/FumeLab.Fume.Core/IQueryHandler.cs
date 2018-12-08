@@ -1,7 +1,11 @@
-﻿namespace FumeLab.Fume.Core
+﻿using FumeLab.Fume.Core.Queries;
+
+namespace FumeLab.Fume.Core
 {
-    public interface IQueryHandler<TResponse, TQuery>
+    public interface IQueryHandler<TResponse, TQuery> 
+        where TResponse : IQueryResult
+        where TQuery : IQuery
     {
-        TResponse Handle(IQuery<TQuery> query);
+        TResponse Handle(TQuery query);
     }
 }

@@ -21,8 +21,8 @@ namespace FumeLab.Fume.Selenium
             _commandFactory.Register<AppendValue>(() => new AppendValueCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<ClearValue>(() => new ClearValueCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<WaitUntilVisible>(() => new WaitUntilVisibleCommandHandler(_driver));
-
         }
+
         public void Handle(ICommand command)
         {
             _commandFactory.Create(command.GetType()).Handle(command);

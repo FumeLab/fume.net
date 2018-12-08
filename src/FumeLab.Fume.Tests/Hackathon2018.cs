@@ -25,7 +25,7 @@ namespace FumeLab.Fume.Tests
             var pageFactory = new PageFactory(commandRouter);
             var gitHubPageQueryHandler = new GetPageQueryHandler<GitHubPage>(driver, pageFactory);
 
-            var githubPage = gitHubPageQueryHandler.Handle(new Query<GetPage>(new GetPage { Url = url }));
+            var githubPage = gitHubPageQueryHandler.Handle(new GetPage { Url = url }).Value;
 
             //SeleniumDriver.WebDriver.Manage().Window.Maximize();
 

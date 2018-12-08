@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace FumeLab.Fume.Selenium.QueryHandlers
 {
-    public class GetPageQueryHandler<TPage> : IQueryHandler<TPage, GetPage> where TPage : class, new()
+    public class GetPageQueryHandler<TPage> : IQueryHandler<QueryResult<TPage>, GetPage> where TPage : class, new()
     {
         private readonly IWebDriver _driver;
         private readonly IPageFactory _pageFactory;
@@ -14,11 +14,11 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
             _driver = driver;
             _pageFactory = pageFactory;
         }
-        public TPage Handle(IQuery<GetPage> query)
+        public QueryResult<TPage> Handle(GetPage query)
         {
-            _driver.Navigate().GoToUrl(query.Value.Url);
+            _driver.Navigate().GoToUrl(query.Url);
 
-            return _pageFactory.CreatePage<TPage>();
+            return new QueryResult<TPage> {Value = _pageFactory.CreatePage<TPage>()};
         }
 
     }

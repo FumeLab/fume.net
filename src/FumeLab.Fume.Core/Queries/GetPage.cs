@@ -1,6 +1,6 @@
 ﻿namespace FumeLab.Fume.Core.Queries
 {
-    public class GetPage
+    public class GetPage : IQuery
     {
         public string Url { get; set; }
     }

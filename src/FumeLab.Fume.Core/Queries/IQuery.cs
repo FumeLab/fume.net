@@ -1,6 +1,6 @@
 ﻿namespace FumeLab.Fume.Core
 {
-    public interface IQueryRouter
+    public interface IQuery
     {
     }
 }

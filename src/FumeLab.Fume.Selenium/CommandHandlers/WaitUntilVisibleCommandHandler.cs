@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FumeLab.Fume.Core;
-using FumeLab.Fume.Core.Commands;
-using FumeLab.Fume.Core.Queries;
+﻿using FumeLab.Fume.Core.Commands;
 using FumeLab.Fume.Selenium.QueryHandlers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;

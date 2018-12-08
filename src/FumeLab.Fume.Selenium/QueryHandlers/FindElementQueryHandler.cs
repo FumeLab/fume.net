@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace FumeLab.Fume.Selenium.QueryHandlers
 {
-    internal class FindElementQueryHandler : IQueryHandler<IWebElement, FindElement>
+    internal class FindElementQueryHandler : IQueryHandler<QueryResult<IWebElement>, FindElement>
     {
         private readonly IWebDriver _driver;
 
@@ -12,10 +12,9 @@ namespace FumeLab.Fume.Selenium.QueryHandlers
         {
             _driver = driver;
         }
-        public IWebElement Handle(IQuery<FindElement> query)
+        public QueryResult<IWebElement> Handle(FindElement query)
         {
-            var selectorMapper = new SelectorMapper();
-            return _driver.FindElement(selectorMapper.Map(query.Value.Selector));
+            return new QueryResult<IWebElement> { Value = _driver.FindElement(new SelectorMapper().Map(query.Selector))};
         }
     }
 }

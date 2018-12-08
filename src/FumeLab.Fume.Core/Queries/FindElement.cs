@@ -2,7 +2,7 @@
 
 namespace FumeLab.Fume.Core.Queries
 {
-    public class FindElement
+    public class FindElement : IQuery
     {
         public Selector Selector { get; set; }
     }

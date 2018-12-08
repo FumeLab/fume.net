@@ -7,13 +7,13 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 {
     internal class AppendValueCommandHandler : CommandHandler<AppendValue>
     {
-        public AppendValueCommandHandler(IQueryHandler<IWebElement, FindElement> query) : base(query)
+        public AppendValueCommandHandler(IQueryHandler<QueryResult<IWebElement>, FindElement> query) : base(query)
         {
         }
 
         public override void HandleCommand(AppendValue command)
         {
-            Query.Handle(new Query<FindElement>(new FindElement { Selector = command.Selector })).SendKeys(command.Value);
+            Query.Handle(new FindElement { Selector = command.Selector }).Value.SendKeys(command.Value);
         }
 
     }

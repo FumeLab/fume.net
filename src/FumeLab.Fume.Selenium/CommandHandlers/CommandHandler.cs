@@ -7,9 +7,9 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 {
     internal abstract class CommandHandler<TCommand> : ICommandHandler<ICommand> where TCommand : ICommand
     {
-        protected IQueryHandler<IWebElement, FindElement> Query { get; }
+        protected IQueryHandler<QueryResult<IWebElement>, FindElement> Query { get; }
 
-        protected CommandHandler(IQueryHandler<IWebElement, FindElement> query)
+        protected CommandHandler(IQueryHandler<QueryResult<IWebElement>, FindElement> query)
         {
             Query = query;
         }

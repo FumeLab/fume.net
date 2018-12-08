@@ -10,6 +10,6 @@ namespace FumeLab.Fume.Tests.Pages
         public Clickable ClickMeButton { get; set; }
 
         [Selector(typeof(Name), "et_pb_contact_name_1")]
-        public Input inputElement { get; set; }
+        public Input InputElement { get; set; }
     }
 }
