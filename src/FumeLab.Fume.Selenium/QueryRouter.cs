@@ -1,8 +1,5 @@
 ﻿using FumeLab.Fume.Core;
-using FumeLab.Fume.Core.Commands;
 using FumeLab.Fume.Core.Queries;
-using FumeLab.Fume.Selenium.CommandHandlers;
-using FumeLab.Fume.Selenium.QueryHandlers;
 using OpenQA.Selenium;
 
 namespace FumeLab.Fume.Selenium
@@ -18,7 +15,7 @@ namespace FumeLab.Fume.Selenium
             _driver = driver;
 
             //_queryFactory.Register<GetPage>(() => new GetPageQueryHandler(_driver, new PageFactory(new CommandRouter(new CommandHandlerFactory(), driver))));
-            _queryFactory.Register<FindElement>(() => new FindElementQueryHandler(_driver));
+            //_queryFactory.Register<FindElement>(() => new FindElementQueryHandler(_driver));
 
         }
 

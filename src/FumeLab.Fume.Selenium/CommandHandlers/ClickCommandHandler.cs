@@ -1,7 +1,6 @@
 ﻿using FumeLab.Fume.Core;
 using FumeLab.Fume.Core.Commands;
 using FumeLab.Fume.Core.Queries;
-using FumeLab.Fume.Selenium.QueryHandlers;
 using OpenQA.Selenium;
 
 namespace FumeLab.Fume.Selenium.CommandHandlers
