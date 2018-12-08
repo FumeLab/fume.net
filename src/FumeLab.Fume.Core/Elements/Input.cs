@@ -1,4 +1,5 @@
-﻿using FumeLab.Fume.Core.Commands;
+﻿using System;
+using FumeLab.Fume.Core.Commands;
 using FumeLab.Fume.Core.Selectors;
 
 namespace FumeLab.Fume.Core.Elements
@@ -17,5 +18,7 @@ namespace FumeLab.Fume.Core.Elements
         public void AppendValue(string value) => _commandRouter.Route(new AppendValue { Selector = this.Selector, Value = value });
 
         public void ClearValue() => _commandRouter.Route(new ClearValue { Selector = this.Selector });
+
+        public void WaitUntilVisible(TimeSpan timeout) => _commandRouter.Route(new WaitUntilVisible {Timeout = timeout, Selector = this.Selector});
     }
 }

@@ -20,6 +20,7 @@ namespace FumeLab.Fume.Selenium
             _commandFactory.Register<SetValue>(() => new SetValueCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<AppendValue>(() => new AppendValueCommandHandler(new FindElementQueryHandler(_driver)));
             _commandFactory.Register<ClearValue>(() => new ClearValueCommandHandler(new FindElementQueryHandler(_driver)));
+            _commandFactory.Register<WaitUntilVisible>(() => new WaitUntilVisibleCommandHandler(_driver));
 
         }
         public void Route(ICommand command)
