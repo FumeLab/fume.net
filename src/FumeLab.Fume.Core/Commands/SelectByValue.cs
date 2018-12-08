@@ -1,6 +1,6 @@
 ﻿namespace FumeLab.Fume.Core.Commands
 {
-    public class SetValue : Command
+    public class SelectByValue : Command
     {
         public string Value { get; set; }
     }
