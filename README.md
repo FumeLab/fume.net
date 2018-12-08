@@ -24,7 +24,7 @@ var pageFactory = new PageFactory(commandRouter);
 var gitHubPage pageFactory.CreatePage<GitHubPage>();
 ```
 
-## Defining Elements##
+## Defining Elements
 
 Define elements trough attributes by defining selector and selector values. 
 
@@ -44,7 +44,7 @@ public Input Username { get; set; }
 fume.net has modern interface implementation which will define possible actions depending which element you choose to create.
 In previous example we showed how to declare Clickable and Input element, other than that you can also create Checkbox, RadioButton, FileUpload, Text and Select element. These elements can be located by either Id, Name, TagName, ClassName, CssSelector, LinkText, or XPath.
 
-## Is FumeLab based on Selenium Webdriver?##
+## Is FumeLab based on Selenium Webdriver?
 
 Goal of fume.net is to be driver agnostic, which means you can choose Selenium Webdriver or any other driver implementation.
 
