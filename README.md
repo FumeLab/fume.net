@@ -58,8 +58,8 @@ Conditions for the elements can be selected between Exists, NotExists, Visible, 
 homePage.ClickMeButton.WaitFor(TimeSpan.FromSeconds(5)).Until(Until.Clickable);
 ```
 
-##License
+## License
 fume.net is licensed under the MIT license.
 
-##FumeLab
+## FumeLab
 FumeLab is open source community with an aim to deliver modern and extensible test automation frameworks.
