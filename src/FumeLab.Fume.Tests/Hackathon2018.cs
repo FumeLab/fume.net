@@ -33,7 +33,7 @@ namespace FumeLab.Fume.Tests
 
             //search for FumeLab on GitHub
             githubPage.SearchGitHub.WaitUntilVisible(timeout);
-            //githubPage.SearchGitHub.SetValue("FumeLab");
+            //githubPage.SearchGitHub.AppendValue("FumeLab");
             //githubPage.JumpToFume.WaitFor(timeout).Until(Until.Clickable);
             //githubPage.JumpToFume.Click();
 

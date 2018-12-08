@@ -21,9 +21,8 @@ namespace FumeLab.Fume.Selenium.CommandHandlers
 
         public override void HandleCommand(WaitUntilVisible command)
         {
-            var element =
-                Query.Handle(new Query<FindElement>(new FindElement { Selector = command.Selector }));
-            new WebDriverWait(_driver, command.Timeout).Until((driver) => element.Displayed);
+            var selectorMapper = new SelectorMapper();
+            new WebDriverWait(_driver, command.Timeout).Until((driver) => driver.FindElement(selectorMapper.Map(command.Selector)).Displayed);
         }
     }
 }

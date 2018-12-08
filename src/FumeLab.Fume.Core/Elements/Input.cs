@@ -19,6 +19,6 @@ namespace FumeLab.Fume.Core.Elements
 
         public void ClearValue() => _commandRouter.Handle(new ClearValue { Selector = this.Selector });
 
-        public void WaitUntilVisible(TimeSpan timeout) => _commandRouter.Route(new WaitUntilVisible {Timeout = timeout, Selector = this.Selector});
+        public void WaitUntilVisible(TimeSpan timeout) => _commandRouter.Handle(new WaitUntilVisible {Timeout = timeout, Selector = this.Selector});
     }
 }

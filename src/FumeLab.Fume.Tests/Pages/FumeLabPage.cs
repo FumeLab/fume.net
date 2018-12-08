@@ -12,7 +12,7 @@ namespace FumeLab.Fume.Tests.Pages
     public class FumeLabPage
     {
         //elements
-        [Selector(Type = typeof(CssSelector), Value = "a[class='button']")]
+        [Selector(Type = typeof(Css), Value = "a[class='button']")]
         public Clickable VisitGitHub { get; set; }
     }
 }

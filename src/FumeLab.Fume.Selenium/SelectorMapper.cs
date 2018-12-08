@@ -5,20 +5,27 @@ namespace FumeLab.Fume.Selenium
 {
     internal class SelectorMapper
     {
-        public By Map(Selector selector) => By.Id(selector.Value);
-
-        public By Map(Id selector) => By.Id(selector.Value);
-
-        public By Map(Name selector) => By.Name(selector.Value);
-
-        public By Map(ClassName selector) => By.ClassName(selector.Value);
-
-        public By Map(Css selector) => By.CssSelector(selector.Value);
-
-        public By Map(LinkText selector) => By.LinkText(selector.Value);
-
-        public By Map(TagName selector) => By.TagName(selector.Value);
-
-        public By Map(XPath selector) => By.XPath(selector.Value);
+        public By Map(Selector selector)
+        {
+            switch (selector)
+            {
+                case Id id:
+                    return By.Id(selector.Value);
+                case Name name:
+                    return By.Name(selector.Value);
+                case ClassName className:
+                    return By.ClassName(selector.Value);
+                case Css css:
+                    return By.CssSelector(selector.Value);
+                case LinkText linkText:
+                    return By.LinkText(selector.Value);
+                case TagName tagName:
+                    return By.TagName(selector.Value);
+                case XPath xPath:
+                    return By.XPath(selector.Value);
+                default:
+                    return By.Id(selector.Value);
+            }
+        }
     }
 }
