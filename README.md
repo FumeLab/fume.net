@@ -1,8 +1,8 @@
 # fume.net
 
-The fume.net is framework for writing automated UI tests using C# and .Net.
+The fume.net is a framework for writing automated UI tests using C# and .Net.
 Framework is the result of synergized work of software and test developers in one mission:
-Give community solution for open-source, modern, flexible and awesome testing framework.
+Give community a solution for open-source, modern, flexible and awesome testing framework.
 
 ## Which pattern is the best to use with FumeLab?
 
@@ -39,7 +39,7 @@ public Clickable FumeSiteLink { get; set; }
 public Input Username { get; set; }
 ```
 
-fume.net has modern interface implementation which will define possible actions depending which element you choose to create.
+fume.net has modern interface implementation which will define possible actions depending on which element you choose to create.
 In previous example we showed how to declare Clickable and Input element, other than that you can also create Checkbox, RadioButton, FileUpload, Text and Select element. These elements can be located by either Id, Name, TagName, ClassName, CssSelector, LinkText, or XPath.
 
 ## Is FumeLab based on Selenium Webdriver?
@@ -48,7 +48,7 @@ Goal of fume.net is to be driver agnostic, which means you can choose Selenium W
 
 ## Wait Helper
 
-Wait helper implementation is based on check whether state of an element is in the same as expected to be.
+Wait helper implementation is based on a check whether state of an element is in the same as expected to be.
 Conditions for the elements can be selected between Exists, NotExists, Visible, NotVisible, Clickable and many more.
 
 **Example:**
@@ -62,4 +62,4 @@ homePage.ClickMeButton.WaitFor(TimeSpan.FromSeconds(5)).Until(Until.Clickable);
 fume.net is licensed under the MIT license.
 
 ## FumeLab
-FumeLab is open source community with an aim to deliver modern and extensible test automation frameworks.
+FumeLab is an open source community with the aim to deliver modern and extensible test automation frameworks.
