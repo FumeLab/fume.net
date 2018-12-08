@@ -39,6 +39,29 @@ public Clickable FumeSiteLink { get; set; }
 public Input Username { get; set; }
 ```
 
+**Page Example:**
+
+```csharp
+public class GitHubPage
+{
+    //elements
+    [Selector(Type = typeof(XPath), Value = "//input[@placeholder='Search GitHub']")]
+    public Input SearchGitHub { get; set; }
+
+    [Selector(Type = typeof(XPath), Value = "//a[@href='/FumeLab/fumelab.github.io']")]
+    public Clickable FumeLabLink { get; set; }
+
+    [Selector(Type = typeof(XPath), Value = "//div[contains(text(),'FumeLab')]")]
+    public Clickable JumpToFume { get; set; }
+
+    [Selector(Type = typeof(XPath), Value = "//a[@href='/FumeLab']")]
+    public Clickable FumeLabBaseLink { get; set; }
+
+    [Selector(Type = typeof(XPath), Value = "//a[@title='https://fumelab.github.io']")]
+    public Clickable FumeSiteLink { get; set; }
+}
+```
+
 fume.net has modern interface implementation which will define possible actions depending on which element you choose to create.
 In previous example we showed how to declare Clickable and Input element, other than that you can also create Checkbox, RadioButton, FileUpload, Text and Select element. These elements can be located by either Id, Name, TagName, ClassName, CssSelector, LinkText, or XPath.
 
