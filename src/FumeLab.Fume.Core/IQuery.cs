@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FumeLab.Fume.Core
+﻿namespace FumeLab.Fume.Core
 {
     public interface IQuery<TQuery>
     {
